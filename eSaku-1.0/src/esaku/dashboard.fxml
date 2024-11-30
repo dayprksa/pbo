@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esaku.dashboardController">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;">
+         <children>
+            <BorderPane prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="105.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="69.0" layoutY="13.0" prefHeight="121.33333333333333" prefWidth="1100.0" style="-fx-background-color: #202b45;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <FontAwesomeIcon fill="WHITE" glyphName="GRADUATION_CAP" layoutX="32.0" layoutY="83.0" size="80" />
+                              <Label layoutX="152.0" layoutY="29.0" text="Menu Kesiswaan" textFill="WHITE">
+                                 <font>
+                                    <Font name="Consolas" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="close" mnemonicParsing="false" onAction="#close" styleClass="close" stylesheets="@dashboardDesign.css" textAlignment="CENTER" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="CLOSE" textAlignment="CENTER" wrappingWidth="30.761822938919067" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="minimize" layoutX="994.0" layoutY="5.0" mnemonicParsing="false" onAction="#minimize" styleClass="minimize" stylesheets="@dashboardDesign.css" textAlignment="CENTER">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="MINUS" textAlignment="CENTER" wrappingWidth="30.761822938919067" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="-14.0" layoutY="47.0" prefHeight="494.6666666666667" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <FontAwesomeIcon glyphName="USER" layoutX="23.0" layoutY="61.0" size="40" />
+                              <Label layoutX="72.0" layoutY="27.0" text="Daffa Jaya Perkasa">
+                                 <font>
+                                    <Font name="Consolas" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="72.0" layoutY="40.0" text="Kesiswaan">
+                                 <font>
+                                    <Font name="Consolas" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="72.0" layoutY="53.0" text="NIP : 270208">
+                                 <font>
+                                    <Font name="Consolas" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="102.99998474121094" endY="-7.62939453125E-6" layoutX="97.0" layoutY="77.0" startX="-97.00000762939453" startY="-7.62939453125E-6" stroke="#127aaa" />
+                              <Button fx:id="home_btn" layoutX="12.0" layoutY="105.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Home">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="HOME" size="30" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Consolas Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="dataKelas_btn" layoutX="12.0" layoutY="142.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Data Kelas">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="DATABASE" size="25" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Consolas Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="jp_btn" layoutX="12.0" layoutY="178.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Jenis Pelanggaran">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="WARNING" size="25" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Consolas Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="12.0" layoutY="213.0" mnemonicParsing="false" onAction="#logout" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Keluar">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="SIGN_OUT" size="25" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Consolas Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="home_form" layoutX="40.0" layoutY="70.0" prefHeight="494.6666666666667" prefWidth="898.6666666666666" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93b9cc" height="150.0" layoutX="23.0" layoutY="14.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="398.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93b9cc" height="150.0" layoutX="455.0" layoutY="14.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="429.0" />
+                              <Label layoutX="168.0" layoutY="41.0" text="Total Kelas">
+                                 <font>
+                                    <Font name="Consolas" size="31.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="205.0" layoutY="80.0" text="56">
+                                 <font>
+                                    <Font name="Consolas" size="46.0" />
+                                 </font>
+                              </Label>
+                              <FontAwesomeIcon glyphName="USERS" layoutX="53.0" layoutY="118.0" size="80" />
+                              <Label layoutX="262.0" layoutY="97.0" text="kelas">
+                                 <font>
+                                    <Font name="Consolas" size="23.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="628.0" layoutY="40.0" text="Total Siswa/Siswi">
+                                 <font>
+                                    <Font name="Consolas" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="647.0" layoutY="84.0" text="2.016">
+                                 <font>
+                                    <Font name="Consolas" size="34.0" />
+                                 </font>
+                              </Label>
+                              <FontAwesomeIcon glyphName="USERS" layoutX="513.0" layoutY="117.0" size="80" />
+                              <Label layoutX="750.0" layoutY="90.0" text="orang">
+                                 <font>
+                                    <Font name="Consolas" size="23.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="24.0" layoutY="175.0" text="Riwayat Pelanggaran">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="457.0" layoutY="181.0" text="Presentasi pelanggaran per minggu">
+                                 <font>
+                                    <Font size="27.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane layoutX="458.0" layoutY="223.0" prefHeight="264.0" prefWidth="424.0">
+                                 <children>
+                                    <LineChart fx:id="home_PresentasiPelanggaranPerMinggu" layoutX="-108.0" layoutY="-156.0" prefHeight="264.0" prefWidth="424.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </LineChart>
+                                 </children>
+                              </AnchorPane>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#202b45" height="84.0" layoutX="80.0" layoutY="237.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="296.0" />
+                              <Circle fill="WHITE" layoutX="74.0" layoutY="283.0" radius="53.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                              <FontAwesomeIcon glyphName="USER" layoutX="45.0" layoutY="309.0" size="70" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#202b45" height="16.0" layoutX="115.0" layoutY="229.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="98.0" />
+                              <Label layoutX="123.0" layoutY="232.0" text="22 Oktober 2024" textFill="WHITE">
+                                 <font>
+                                    <Font name="Consolas" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="145.0" layoutY="254.0" text="Firdaus Hardiansyah" textFill="WHITE">
+                                 <font>
+                                    <Font name="Consolas" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="145.0" layoutY="266.0" text="NIS : 2212931" textFill="WHITE">
+                                 <font>
+                                    <Font name="Consolas" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="145.0" layoutY="277.0" text="XI - RPL - 1" textFill="WHITE">
+                                 <font>
+                                    <Font name="Consolas" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="145.0" layoutY="290.0" text="Terlambat 2 point" textFill="RED">
+                                 <font>
+                                    <Font name="Consolas" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#202b45" height="84.0" layoutX="79.0" layoutY="363.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="296.0" />
+                              <Circle fill="WHITE" layoutX="73.0" layoutY="409.0" radius="53.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#202b45" height="16.0" layoutX="114.0" layoutY="355.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="98.0" />
+                              <Label layoutX="122.0" layoutY="358.0" text="05 Oktober 2024" textFill="WHITE">
+                                 <font>
+                                    <Font name="Consolas" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="144.0" layoutY="380.0" text="Gangan Ramdani" textFill="WHITE">
+                                 <font>
+                                    <Font name="Consolas" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="144.0" layoutY="392.0" text="NIS : 221288" textFill="WHITE">
+                                 <font>
+                                    <Font name="Consolas" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="144.0" layoutY="403.0" text="XI - RPL - 1" textFill="WHITE">
+                                 <font>
+                                    <Font name="Consolas" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="144.0" layoutY="416.0" text="Kabur jam pelajaran 20 point" textFill="RED">
+                                 <font>
+                                    <Font name="Consolas" size="10.0" />
+                                 </font>
+                              </Label>
+                              <FontAwesomeIcon glyphName="USER" layoutX="47.0" layoutY="434.0" size="70" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="dataKelas_form" layoutX="107.0" layoutY="82.0" prefHeight="494.6666666666667" prefWidth="898.6666666666666" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="78.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="900.0" />
+                              <Label layoutX="31.0" layoutY="27.0" text="Data Kelas">
+                                 <font>
+                                    <Font name="Consolas Bold" size="20.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="DATABASE" />
+                                 </graphic>
+                              </Label>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="78.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="900.0" />
+                              <FontAwesomeIcon glyphName="GRADUATION_CAP" layoutX="18.0" layoutY="160.0" size="60" />
+                              <Label layoutX="107.0" layoutY="114.0" text="X - PPLG - 1">
+                                 <font>
+                                    <Font name="Consolas" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="107.0" layoutY="129.0" text="Wali Kelas : Budi, S. T">
+                                 <font>
+                                    <Font name="Consolas" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="106.0" layoutY="146.0" text="Total Murid : 36 Siswa">
+                                 <font>
+                                    <Font name="Consolas" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="78.0" layoutY="190.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="900.0" />
+                              <FontAwesomeIcon glyphName="GRADUATION_CAP" layoutX="23.0" layoutY="250.0" size="60" />
+                              <Label layoutX="112.0" layoutY="204.0" text="X - PPLG - 2">
+                                 <font>
+                                    <Font name="Consolas" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="112.0" layoutY="219.0" text="Wali Kelas : Susi, S. T">
+                                 <font>
+                                    <Font name="Consolas" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="111.0" layoutY="236.0" text="Total Murid : 36 Siswa">
+                                 <font>
+                                    <Font name="Consolas" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="78.0" layoutY="280.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="900.0" />
+                              <FontAwesomeIcon glyphName="GRADUATION_CAP" layoutX="31.0" layoutY="340.0" size="60" />
+                              <Label layoutX="120.0" layoutY="294.0" text="X - RPL - 1">
+                                 <font>
+                                    <Font name="Consolas" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="120.0" layoutY="309.0" text="Wali Kelas : Shofi, S. T">
+                                 <font>
+                                    <Font name="Consolas" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="119.0" layoutY="326.0" text="Total Murid : 36 Siswa">
+                                 <font>
+                                    <Font name="Consolas" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="78.0" layoutY="370.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="900.0" />
+                              <FontAwesomeIcon glyphName="GRADUATION_CAP" layoutX="31.0" layoutY="430.0" size="60" />
+                              <Label layoutX="120.0" layoutY="384.0" text="X - RPL - 2">
+                                 <font>
+                                    <Font name="Consolas" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="120.0" layoutY="399.0" text="Wali Kelas : Susan, S. T">
+                                 <font>
+                                    <Font name="Consolas" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="119.0" layoutY="416.0" text="Total Murid : 36 Siswa">
+                                 <font>
+                                    <Font name="Consolas" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="jenisPelanggaran_form" prefHeight="494.6666666666667" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="78.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="900.0" />
+                              <Label layoutX="35.0" layoutY="27.0" text="Jenis Pelanggaran">
+                                 <font>
+                                    <Font name="Consolas Bold" size="20.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="WARNING" />
+                                 </graphic>
+                              </Label>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93b9cc" height="150.0" layoutX="35.0" layoutY="89.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="398.0" />
+                              <Label layoutX="180.0" layoutY="116.0" text="Pelanggaran">
+                                 <font>
+                                    <Font name="Consolas" size="31.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="217.0" layoutY="155.0">
+                                 <font>
+                                    <Font name="Consolas" size="46.0" />
+                                 </font>
+                              </Label>
+                              <FontAwesomeIcon glyphName="WARNING" layoutX="65.0" layoutY="193.0" size="80" />
+                              <Label layoutX="180.0" layoutY="158.0" text="terdapat 97 aturan">
+                                 <font>
+                                    <Font name="Consolas" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93b9cc" height="150.0" layoutX="467.0" layoutY="89.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="398.0" />
+                              <Label layoutX="598.0" layoutY="116.0" text="Aturan Point">
+                                 <font>
+                                    <Font name="Consolas" size="31.0" />
+                                 </font>
+                              </Label>
+                              <FontAwesomeIcon glyphName="BOOK" layoutX="497.0" layoutY="193.0" size="80" />
+                              <Label layoutX="180.0" layoutY="185.0" text="yang tidak boleh dilanggar">
+                                 <font>
+                                    <Font name="Consolas" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="598.0" layoutY="155.0" text="Jika siswa memiliki 100 point">
+                                 <font>
+                                    <Font name="Consolas" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="598.0" layoutY="175.0" text="maka akan dikeluarkan dari">
+                                 <font>
+                                    <Font name="Consolas" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="598.0" layoutY="194.0" text="sekolah">
+                                 <font>
+                                    <Font name="Consolas" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="43.0" layoutY="250.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="900.0" />
+                              <Label layoutX="341.0" layoutY="260.0" text="Pelanggaran KBM">
+                                 <font>
+                                    <Font name="Consolas Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="jenisPelanggaran_table" layoutY="295.0" prefHeight="200.0" prefWidth="900.0" stylesheets="@dashboardDesign.css">
+    <columns>
+        <TableColumn fx:id="jenisPelanggaran_col_kode" prefWidth="65.99998223781586" text="Kode" />
+        <TableColumn fx:id="jenisPelanggaran_col_subkode" prefWidth="104.66669464111328" text="Sub_Kode" />
+        <TableColumn fx:id="jenisPelanggaran_col_jp" prefWidth="284.66661071777344" text="Jenis Pelanggaran" />
+        <TableColumn fx:id="jenisPelanggaran_col_poin" minWidth="0.0" prefWidth="85.33328247070312" text="Poin" />
+        <TableColumn fx:id="jenisPelanggaran_col_penanganan" prefWidth="360.0" text="Penanganan" />
+    </columns>
+</TableView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" 
+           prefHeight="400.0" prefWidth="600.0" 
+           xmlns="http://javafx.com/javafx/23.0.1" 
+           xmlns:fx="http://javafx.com/fxml/1" 
+           fx:controller="esaku.FXMLDocumentController">
+    <children>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+            <children>
+                <AnchorPane fx:id="kesiswaan_form" prefHeight="400.0" prefWidth="600.0" 
+                            style="-fx-background-color: #202b45;" 
+                            stylesheets="@loginDesign.css">
+                    <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="213.0" 
+                                   layoutX="122.0" layoutY="120.0" smooth="false" stroke="BLACK" 
+                                   strokeType="INSIDE" strokeWidth="0.0" width="355.0"/>
+                                   
+                        <FontAwesomeIcon fill="WHITE" glyphName="GRADUATION_CAP" layoutX="246.0" 
+                                         layoutY="108.0" size="80"/>
+                                         
+                        <TextField fx:id="nama_kesiswaan" layoutX="176.0" layoutY="176.0" 
+                                   onAction="#loginKesiswaan" prefHeight="25.0" 
+                                   prefWidth="266.0" promptText="Masukan Nama Anda" 
+                                   style="-fx-background-color: transparent;">
+                            <font>
+                                <Font name="Consolas" size="12.0"/>
+                            </font>
+                        </TextField>
+                        
+                        <FontAwesomeIcon glyphName="USER" layoutX="165.0" layoutY="194.0" 
+                                         wrappingWidth="11.111129760742188"/>
+                                         
+                        <FontAwesomeIcon glyphName="KEY" layoutX="165.0" layoutY="230.0" 
+                                         wrappingWidth="11.111129760742188"/>
+                                         
+                        <Line endX="100.0" layoutX="359.0" layoutY="240.0" startX="-208.4444122314453"/>
+                        
+                        <TextField fx:id="nip" layoutX="176.0" layoutY="213.0" 
+                                   onAction="#loginKesiswaan" prefHeight="25.0" 
+                                   prefWidth="266.0" promptText="Masukan NIP Anda" 
+                                   style="-fx-background-color: transparent;">
+                            <font>
+                                <Font name="Consolas" size="12.0"/>
+                            </font>
+                        </TextField>
+                        
+                        <Button fx:id="loginBtn" alignment="CENTER" layoutX="255.0" layoutY="254.0" 
+                                mnemonicParsing="false" onAction="#loginKesiswaan" 
+                                prefHeight="22.0" prefWidth="84.0" 
+                                style="-fx-background-color: #202b45;" text="Login" textFill="WHITE">
+                            <font>
+                                <Font name="Consolas" size="12.0"/>
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Button>
+                        
+                        <Hyperlink layoutX="204.0" layoutY="288.0" text="Saya seorang siswa">
+                            <font>
+                                <Font name="Consolas" size="8.0"/>
+                            </font>
+                        </Hyperlink>
+                        
+                        <Hyperlink layoutX="306.0" layoutY="288.0" text="Saya belum mendaftar">
+                            <font>
+                                <Font name="Consolas" size="8.0"/>
+                            </font>
+                        </Hyperlink>
+                        
+                        <Line endX="-100.0" endY="10.33331298828125" layoutX="397.0" 
+                              layoutY="290.0" startX="-100.0"/>
+                              
+                        <Line endX="-90.33331298828125" layoutX="333.0" layoutY="144.0" 
+                              startX="-211.0"/>
+                              
+                        <Line endX="100.0" layoutX="359.0" layoutY="200.0" 
+                              startX="-208.4444122314453"/>
+                              
+                        <Line endX="-94.0" layoutX="571.0" layoutY="144.0" startX="-211.0"/>
+                        
+                        <Text layoutX="266.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" 
+                              text="Kesiswaan">
+                            <font>
+                                <Font name="Consolas Bold" size="14.0"/>
+                            </font>
+                        </Text>
+                        
+                        <Button fx:id="close" layoutX="537.0" layoutY="10.0" mnemonicParsing="false" 
+                                onAction="#close" styleClass="close" 
+                                stylesheets="@loginDesign.css" 
+                                AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="CLOSE" strokeWidth="0.0" 
+                                                 styleClass="close">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                </FontAwesomeIcon>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>
